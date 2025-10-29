@@ -14,7 +14,12 @@ DiscordBridge is a plugin that allows seamless integration between Discord and o
 - Support for multiple Discord servers and Minecraft worlds.
 - Easy setup and configuration through a user-friendly interface.
 
+
 ## Installation
+> [!WARNING]
+> You MUST keep the config.yml file as provided, unless you are editing the file via your Minecraft server host.\
+> This is because, if your version of the code is hosted on github, publishing your personal TOKEN for a bot is a security hazard and not advised.
+
 1. Download the latest version of the DiscordBridge plugin from the releases page.
 2. Place the downloaded JAR file into the `plugins` directory of your Paper server.
 3. Restart your server to generate the configuration files.
@@ -28,6 +33,7 @@ DiscordBridge is a plugin that allows seamless integration between Discord and o
 
 ## Usage
 - Use the `/discordbridge link` command in Minecraft to link your Minecraft account with your Discord account.
+  - The bot will send a DM with a unique code, which you can use with `/discordbridge link <code>` to confirm link.
 - Use the `/discordbridge unlink` command to unlink your accounts.
 - Customize message formats and notification settings in the `config.yml` file.
 
