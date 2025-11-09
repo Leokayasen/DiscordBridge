@@ -1,6 +1,12 @@
 name: DiscordBridge
-version: 1.0.0
+version: 1.2.0
 main: com.bitwave.discordbridge.DiscordBridge
 api-version: 1.21
 description: A lightweight bridge between Minecraft and Discord
 author: Kai
+
+commands:
+    discordbridge:
+        description: Manage the DiscordBridge plugin
+        usage: /discordbridge <reload|test>
+        permission: discordbridge.admin

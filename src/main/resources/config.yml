@@ -1,3 +1,10 @@
 discord:
   token: "BOT_TOKEN_HERE"
   channel-id: "CHANNEL_ID_HERE"
+
+
+format:
+  minecraft-to-discord: "**[Minecraft]** {player}: {message}"
+  discord-to-minecraft: "**[Discord]** {user}: {message}"
+  join: "🟢 **{player}** has joined the server"
+  leave: "🔴 **{player}** has left the server"

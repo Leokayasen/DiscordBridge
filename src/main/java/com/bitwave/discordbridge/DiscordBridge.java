@@ -1,6 +1,7 @@
 package com.bitwave.discordbridge;
 
 import com.bitwave.discordbridge.DiscordBotManager;
+import com.bitwave.discordbridge.commands.DiscordBridgeCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class DiscordBridge extends JavaPlugin {
@@ -22,6 +23,8 @@ public class DiscordBridge extends JavaPlugin {
 
         botManager = new DiscordBotManager(this);
         botManager.startBot(token, channelId);
+
+        getCommand("discordbridge").setExecutor(new DiscordBridgeCommand(this));
 
         getServer().getPluginManager().registerEvents(new MinecraftChatListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerActivityListener(this), this);
