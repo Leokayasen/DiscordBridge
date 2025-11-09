@@ -45,4 +45,12 @@ public class DiscordBridge extends JavaPlugin {
     public DiscordBotManager getBotManager() {
         return botManager;
     }
+    
+    /**
+     * Check if the Discord bot is connected and ready
+     * @return true if bot is ready to send/receive messages
+     */
+    public boolean isBotReady() {
+        return botManager != null && botManager.isReady();
+    }
 }

@@ -14,7 +14,15 @@ public class MinecraftChatListener implements Listener {
 
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event) {
-        String message = "**" + event.getPlayer().getName() + "**: " + event.getMessage();
+        String playerName = event.getPlayer().getName();
+        String messageContent = event.getMessage();
+        
+        // Truncate long messages to prevent Discord API issues
+        if (messageContent.length() > 1900) {
+            messageContent = messageContent.substring(0, 1900) + "...";
+        }
+        
+        String message = "**" + playerName + "**: " + messageContent;
 
         if (plugin.getBotManager() != null) {
             plugin.getBotManager().sendMessage(message);
