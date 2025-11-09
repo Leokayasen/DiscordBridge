@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.bitwave'
-version = '1.1.0'
+version = '1.2.5'
 description = 'A BitWave Utility Plugin for Minecraft 1.21.8 Paper Servers'
 
 java {
