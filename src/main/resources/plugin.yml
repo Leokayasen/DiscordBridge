@@ -4,3 +4,8 @@ main: com.bitwave.discordbridge.DiscordBridge
 api-version: 1.21
 description: A lightweight bridge between Minecraft and Discord
 author: Kai
+
+commands:
+  discord:
+    description: Begin linking your account with Discord
+    usage: /discord

@@ -1,3 +1,4 @@
 discord:
   token: "BOT_TOKEN_HERE"
   channel-id: "CHANNEL_ID_HERE"
+  webhook-url: "WEBHOOK_URL_HERE"
