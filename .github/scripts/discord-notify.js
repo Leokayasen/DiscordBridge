@@ -107,10 +107,23 @@ async function main() {
         embed.fields.push({ name: 'Quick payload', value: '```json\n' + truncate(JSON.stringify(payload, null, 2), 1000) + '\n```' });
     }
 
+    // Build and Sanitize username to avoid rejection
+    const rawUsername = `GitHub • ${payload.repository?.name || repoFull}`;
+    let username = rawUsername.replace(/discord/ig, '').trim();
+    username = username.replace(/\s{2,}/g, ' ').replace(/^[-_•\s]+|[-_•\s]+$/g, '');
+    if (username.length > 80) username = username.slice(0, 80);
+
+    if (rawUsername !== username) {
+        console.log('Sanitized webhook username from', JSON.stringify(rawUsername), 'to', JSON.stringify(username || '(removed)'), ' to avoid Discord rejection.');
+    }
+
     const body = {
-        username: `GitHub • ${payload.repository?.name || repoFull}`,
         embeds: [embed]
     };
+
+    if (username) {
+        body.username = username;
+    }
 
     try {
         const res = await fetch(webhook, {
